@@ -398,8 +398,4 @@ io.on("connection", socket => {
 
 });
 
-/* -------------------- START SERVER -------------------- */
-
-server.listen(PORT, () => {
-  console.log("Server running on port", PORT);
-});
+ 
