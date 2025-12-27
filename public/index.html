@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Imposter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="leaveRoomBtn" class="leave-btn hidden" onclick="leaveRoom()">  Exit </button>
+
+<section id="join" class="card">
+  <h1>Word Imposter</h1>
+  <input id="nameInput" placeholder="Name" required>
+  <input id="roomInput" placeholder="Room ID" required>
+  <button class="btn-warn" onclick="joinRoom()">Join</button>
+</section>
+
+<section id="lobby" class="card hidden">
+   <div class="topbar">
+    <h3 class="screen-title">Lobby</h3>
+    <p id="roomCode" class="room-code sec-title"></p>
+   </div>
+  <div class="divider"></div>
+  <h3>Players</h3>
+  <ul class="list" id="playerList"></ul>
+<div class="divider"></div>
+  <h3>Settings</h3>
+  <div id="hostControls" class="hidden">
+    <label><input type="checkbox" id="showRole"> Show Role</label>
+    <label><input type="checkbox" id="showCategory" checked> Show Category</label>
+
+    <select id="imposterMode">
+      <option value="NO_WORD">No Word</option>
+      <option value="DIFFERENT_WORD">Different Word</option>
+    </select>
+
+    <textarea id="wordData"></textarea>
+    <button class="btn-accent" onclick="startRound()">Start Round</button>
+  </div>
+</section>
+
+<section id="reveal" class="card hidden">
+  <h3 id="categoryText"></h3>
+  <div class="word-box" id="wordText"></div>
+  <div id="roleText"></div>
+  <button id="openVotingBtn" class="btn-warn hidden" onclick="openVoting()">Open Voting</button>
+</section>
+
+<section id="voting" class="card hidden">  
+  
+  <div class="topbar"> 
+  <h3 class="screen-title">Vote</h3> 
+  <p id="voteProgress" class="vote-progress sec-title"></p>
+  </div>
+  
+  <div class="divider"></div>
+  <ul id="playerVoteList" class="vote-player-list"></ul>
+  
+  <div class="divider"></div>
+  <select id="voteSelect">   </select>
+  <button class="btn-warn" id="submitVoteBtn" onclick="submitVote()">Submit Vote</button>
+  <p id="voteStatus" class="hidden"></p>
+   <div class="divider"></div>
+  <button id="forceEndVotingBtn" class="btn-ghost hidden" onclick="forceEndVoting()">
+    Force End Voting
+  </button>
+</section>
+
+<section id="results" class="card hidden">
+  <h3>Results</h3>
+  <div class="divider"></div>
+  <div id="resultsText"></div>
+  <div class="divider"></div>
+  <h3>Scores</h3>
+  <ul id="scoreBoard"></ul>
+  <button id="nextRoundBtn" class="btn-warn hidden" onclick="startRound()">Next Round</button>
+</section>
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
