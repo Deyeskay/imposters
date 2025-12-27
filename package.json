@@ -1,5 +1,5 @@
 {
-  "name": "word-imposter-backend",
+  "name": "word-imposter",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
