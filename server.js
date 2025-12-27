@@ -1,13 +1,15 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
+import path from "path";                  // ✅ MISSING
+import { fileURLToPath } from "url";      // ✅ REQUIRED FOR __dirname
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const server = http.createServer(app);
-
-const io = new Server(server, {
-  cors: { origin: "*" }
-});
+const io = new Server(server);
 
 const PORT = process.env.PORT || 8080;
 
