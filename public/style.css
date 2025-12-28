@@ -300,4 +300,10 @@ li {
   content: " ⏳";
   color: #ffc107;
 }
+
+@media (max-height: 700px) {
+    .card {
+        margin-top: 80px;
+    }
+}
  
