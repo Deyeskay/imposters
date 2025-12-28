@@ -162,7 +162,7 @@ section {
 .list li{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  /*justify-content:space-between;*/
   gap:10px;
   padding:12px 12px;
   background: rgba(255,255,255,.40);
@@ -170,6 +170,15 @@ section {
 }
 .list li:first-child{ border-top:none; }
 
+.li-tags {
+	font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 2px solid rgba(43, 58, 85, .16);
+    color: rgba(43, 58, 85, .82);
+    background: linear-gradient(180deg, rgba(124, 255, 209, .30), rgba(110, 231, 255, .22));
+    font-weight: 800;
+}
 
 .hidden { display: none; }
 
