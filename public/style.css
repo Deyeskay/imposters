@@ -33,7 +33,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background: radial-gradient(circle at 55% 20%, #BFF7FF 0%, var(--sky1) 25%, var(--sky2) 55%, var(--sky3) 100%);
-  
+  display: grid;
   justify-content: center;
   align-items: center;
   color: var(--ink);
@@ -68,8 +68,7 @@ body::before{
 	display:inline-flex;
 }
 section {
-	z-index: 1;
-	margin: auto;
+	z-index: 1; 
 }
 
 .divider {
