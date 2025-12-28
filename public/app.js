@@ -133,15 +133,26 @@ socket.on("room_state", state => {
   playerList.innerHTML = "";
   state.players.forEach(p => {
     const li = document.createElement("li");
+	  
+	// Name + score
 	li.textContent = `${p.name} (${p.score})`;
- 
-    if (p.isHost) {
-      const crown = document.createElement("span");
-      crown.textContent = " 👑";
-      crown.style.fontFamily =
-        "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, EmojiSymbols";
-      li.appendChild(crown);
-    }
+	  
+    // YOU tag (only for self)
+	  if (p.uuid === playerUUID) {
+	    const youTag = document.createElement("span");
+	    youTag.textContent = " YOU";
+	    youTag.className = "li-tags";
+	    li.appendChild(youTag);
+	  }
+
+	// HOST tag + crown
+	if (p.isHost) {
+	    const hostTag = document.createElement("span");
+	    hostTag.textContent = " 👑 HOST";
+	    hostTag.className = "li-tags";
+	    li.appendChild(hostTag);
+	  }
+	   
     playerList.appendChild(li);
   });
   
